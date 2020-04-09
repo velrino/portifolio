@@ -29,15 +29,47 @@
               <div class="h6 font-weight-300 text-white"><i class="ni location_pin mr-2"></i>{{data.location.state}},
                 {{data.location.country}}</div>
             </div>
+
+
+            <div class="row row-grid align-items-center mb-5">
+              <div class="col-12 text-center btn-wrapper">
+                <a target="_blank" href="https://twitter.com/velrino" rel="nofollow"
+                  class="btn btn-icon-only btn-twitter rounded-circle" data-toggle="tooltip"
+                  data-original-title="Follow us">
+                  <span class="btn-inner--icon"><i class="fab fa-twitter"></i></span>
+                </a>
+                <a target="_blank" href="https://www.facebook.com/velrino.magalhaes/" rel="nofollow"
+                  class="btn-icon-only rounded-circle btn btn-facebook" data-toggle="tooltip"
+                  data-original-title="Like us">
+                  <span class="btn-inner--icon"><i class="fab fa-facebook-f"></i></span>
+                </a>
+                <a target="_blank" href="https://instagram.com/velrino" rel="nofollow"
+                  class="btn btn-icon-only btn-instagram rounded-circle" data-toggle="tooltip"
+                  data-original-title="Follow us">
+                  <span class="btn-inner--icon"><i class="fab fa-instagram"></i></span>
+                </a>
+                <a target="_blank" href="https://youtube.com/velrino" rel="nofollow"
+                  class="btn btn-icon-only btn-youtube rounded-circle" data-toggle="tooltip"
+                  data-original-title="Follow us">
+                  <span class="btn-inner--icon"><i class="fab fa-youtube"></i></span>
+                </a>
+                <a target="_blank" href="https://github.com/velrino" rel="nofollow"
+                  class="btn btn-icon-only btn-github rounded-circle" data-toggle="tooltip"
+                  data-original-title="Star on Github">
+                  <span class="btn-inner--icon"><i class="fab fa-github"></i></span>
+                </a>
+              </div>
+            </div>
             <div class="mt-5 py-5 text-center">
               <div class="row justify-content-center">
                 <div class="col-lg-3 col-md-12 mt-5 mb-5 typewriter">
                   <h4 class="font-italic text-white" [innerHTML]="data.text"></h4>
                 </div>
-                <div class="col-12 mt-5 mb-5" *ngFor="let item of data.timeline; let i = index">
+                <div class="col-12 mt-5 mb-5" *ngFor="let item of data.knowledges; let i = index">
                   <divider-header [data]="item.name" [icon]="item.icon"></divider-header>
                   <div class="mt-5">
-                    <app-timeline [data]="item.data"></app-timeline>
+                    <skills *ngIf="item.type == 'skill'" [data]="item.data" ></skills>
+                    <timeline *ngIf="item.type == 'timeline'"  [data]="item.data" ></timeline>
                   </div>
                 </div>
               </div>
@@ -46,45 +78,5 @@
         </div>
       </div>
     </section>
-    <footer class="footer">
-      <div class="container">
-        <div class="row row-grid align-items-center mb-5">
-          <div class="col-12 text-center btn-wrapper">
-            <a target="_blank" href="https://twitter.com/velrino" rel="nofollow"
-              class="btn btn-icon-only btn-twitter rounded-circle" data-toggle="tooltip"
-              data-original-title="Follow us">
-              <span class="btn-inner--icon"><i class="fab fa-twitter"></i></span>
-            </a>
-            <a target="_blank" href="https://www.facebook.com/velrino.magalhaes/" rel="nofollow"
-              class="btn-icon-only rounded-circle btn btn-facebook" data-toggle="tooltip" data-original-title="Like us">
-              <span class="btn-inner--icon"><i class="fab fa-facebook-f"></i></span>
-            </a>
-            <a target="_blank" href="https://instagram.com/velrino" rel="nofollow"
-              class="btn btn-icon-only btn-instagram rounded-circle" data-toggle="tooltip"
-              data-original-title="Follow us">
-              <span class="btn-inner--icon"><i class="fab fa-instagram"></i></span>
-            </a>
-            <a target="_blank" href="https://youtube.com/velrino" rel="nofollow"
-              class="btn btn-icon-only btn-youtube rounded-circle" data-toggle="tooltip"
-              data-original-title="Follow us">
-              <span class="btn-inner--icon"><i class="fab fa-youtube"></i></span>
-            </a>
-            <a target="_blank" href="https://github.com/velrino" rel="nofollow"
-              class="btn btn-icon-only btn-github rounded-circle" data-toggle="tooltip"
-              data-original-title="Star on Github">
-              <span class="btn-inner--icon"><i class="fab fa-github"></i></span>
-            </a>
-          </div>
-        </div>
-        <hr>
-        <div class="row align-items-center justify-content-md-between">
-          <div class="col-md-6">
-            <div class="copyright">
-              &copy; {{getYear()}} <a href="#" target="_blank">Velrino</a>.
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
   </div>
 </div>
