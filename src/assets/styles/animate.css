@@ -1,76 +1,109 @@
 .animated {
-    animation-duration: 1s;
-    animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale3d(1, 1, 1);
   }
-  
-  .animated.infinite {
-    animation-iteration-count: infinite;
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
   }
-  
-  @keyframes pulse {
-    from {
-      transform: scale3d(1, 1, 1);
-    }
-  
-    50% {
-      transform: scale3d(1.05, 1.05, 1.05);
-    }
-  
-    to {
-      transform: scale3d(1, 1, 1);
-    }
+
+  to {
+    transform: scale3d(1, 1, 1);
   }
-  
-  .pulse {
-    animation-name: pulse;
+}
+
+.pulse {
+  animation-name: pulse;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
   }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translate3d(0, 100%, 0);
-    }
-  
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
-  
-  .fadeInUp {
-    animation-name: fadeInUp;
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
   }
-  
-  @keyframes rubberBand {
-    from {
-      transform: scale3d(1, 1, 1);
-    }
-  
-    30% {
-      transform: scale3d(1.25, 0.75, 1);
-    }
-  
-    40% {
-      transform: scale3d(0.75, 1.25, 1);
-    }
-  
-    50% {
-      transform: scale3d(1.15, 0.85, 1);
-    }
-  
-    65% {
-      transform: scale3d(0.95, 1.05, 1);
-    }
-  
-    75% {
-      transform: scale3d(1.05, 0.95, 1);
-    }
-  
-    to {
-      transform: scale3d(1, 1, 1);
-    }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
   }
-  
-  .rubberBand {
-    animation-name: rubberBand;
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
   }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.rubberBand {
+  animation-name: rubberBand;
+}
+
+.typewriter h4 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid #3a9dff; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.1em; /* Adjust as needed */
+  animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #3a9dff;
+  }
+  100% {
+    border-color: transparent;
+  }
+}

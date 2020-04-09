@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   data = {
     age: 21,
-    text: "Don't work hard. Work intelligent.",
+    text: "Don't work hard. <br> Work intelligent.",
     location: {
       country: "Brasil",
       state: "São Paulo",
