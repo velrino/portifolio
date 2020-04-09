@@ -30,6 +30,58 @@ export class AppComponent implements OnInit {
         ]
       },
       {
+        type: 'galery',
+        icon: 'fas fa-trophy fa-2x animated infinite pulse',
+        name: 'skills',
+        data: [
+          {
+            title: 'Descripto',
+            img: '/assets/imgs/descripto.png',
+            links: [{
+              show: true,
+              label: 'Show in Play Store',
+              url: 'https://play.google.com/store/apps/details?id=br.com.velrino.zodddemo',
+            }],
+            skills: [
+              {
+                url: 'https://stackshare.io/unity-3d',
+                label: 'Unity 3D',
+              },
+              {
+                url: 'https://stackshare.io/blender',
+                label: 'Blender',
+              },
+              {
+                url: 'https://stackshare.io/c-sharp',
+                label: 'C#',
+              }
+            ]
+          },
+          {
+            title: 'Other',
+            links: [{
+              show: true,
+              label: 'example',
+              url: 'example',
+            }],
+            skills: [
+              {
+                url: 'https://stackshare.io/unity-3d',
+                label: 'Unity 3D',
+              },
+              {
+                url: 'https://stackshare.io/blender',
+                label: 'Blender',
+              },
+              {
+                url: 'https://stackshare.io/c-sharp',
+                label: 'C#',
+              }
+            ]
+          },
+        ]
+      },
+      {
         type: 'timeline',
         icon: 'fab fa-github fa-2x animated infinite pulse',
         name: 'experiences',
@@ -40,7 +92,20 @@ export class AppComponent implements OnInit {
             list: {
               show: true,
               title: 'example',
-              itens: ['NodeJs', 'Angular']
+              skills: [
+                {
+                  url: 'https://stackshare.io/unity-3d',
+                  label: 'Unity 3D',
+                },
+                {
+                  url: 'https://stackshare.io/blender',
+                  label: 'Blender',
+                },
+                {
+                  url: 'https://stackshare.io/c-sharp',
+                  label: 'C#',
+                }
+              ]
             },
             link: {
               show: true,
@@ -54,7 +119,20 @@ export class AppComponent implements OnInit {
             list: {
               show: false,
               title: 'example',
-              itens: ['NodeJs', 'Angular']
+              skills: [
+                {
+                  url: 'https://stackshare.io/unity-3d',
+                  label: 'Unity 3D',
+                },
+                {
+                  url: 'https://stackshare.io/blender',
+                  label: 'Blender',
+                },
+                {
+                  url: 'https://stackshare.io/c-sharp',
+                  label: 'C#',
+                }
+              ]
             },
             link: {
               show: true,
@@ -68,7 +146,20 @@ export class AppComponent implements OnInit {
             list: {
               show: true,
               title: 'example',
-              itens: ['NodeJs', 'Angular']
+              skills: [
+                {
+                  url: 'https://stackshare.io/unity-3d',
+                  label: 'Unity 3D',
+                },
+                {
+                  url: 'https://stackshare.io/blender',
+                  label: 'Blender',
+                },
+                {
+                  url: 'https://stackshare.io/c-sharp',
+                  label: 'C#',
+                }
+              ]
             },
             link: {
               show: false,
@@ -97,12 +188,18 @@ export class AppComponent implements OnInit {
     const daysInYear = 365;
 
     const diffTime = Math.abs(dates.today - dates.born);
-    const diffDays = Math.ceil((diffTime / (1000 * 60 * 60 * 24))/daysInYear);
+    const diffDays = Math.ceil((diffTime / (1000 * 60 * 60 * 24)) / daysInYear);
 
-    return diffDays-1;
+    return diffDays - 1;
   }
 
   checkItemType(item: any, type: string) {
     return item.type == type;
+  }
+
+  baseUrl(){
+    const teste = window.location.origin;
+    console.log(teste)
+    return teste;
   }
 }
