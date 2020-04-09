@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
+import { DividerHeaderComponent } from './shared/components/divider-header/divider-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TimelineComponent
+    TimelineComponent,
+    DividerHeaderComponent
   ],
   imports: [
     BrowserModule,
