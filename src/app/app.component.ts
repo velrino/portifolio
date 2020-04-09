@@ -12,7 +12,51 @@ export class AppComponent implements OnInit {
     location: {
       country: "Brasil",
       state: "São Paulo",
-    }
+    },
+    experiences: [
+      {
+        title: 'Lorem',
+        text: 'Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum',
+        list: {
+          show: true,
+          title: 'example',
+          itens: ['NodeJs', 'Angular']
+        },
+        link: {
+          show: true,
+          label: 'example',
+          url: 'example',
+        }
+      },
+      {
+        title: 'Shazam',
+        text: 'Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum',
+        list: {
+          show: false,
+          title: 'example',
+          itens: ['NodeJs', 'Angular']
+        },
+        link: {
+          show: true,
+          label: 'example',
+          url: 'example',
+        }
+      },
+      {
+        title: 'Shazam',
+        text: 'Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum',
+        list: {
+          show: true,
+          title: 'example',
+          itens: ['NodeJs', 'Angular']
+        },
+        link: {
+          show: false,
+          label: 'example',
+          url: 'example',
+        }
+      }
+    ]
   }
 
   ngOnInit() {

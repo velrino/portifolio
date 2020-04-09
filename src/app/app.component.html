@@ -31,8 +31,16 @@
             </div>
             <div class="mt-5 py-5 border-top text-center">
               <div class="row justify-content-center">
-                <div class="col-lg-9">
+                <div class="col">
                   <p>{{data.text}}</p>
+
+                  <div class="strike">
+                    <span>Experiências</span>
+                  </div>
+
+                  <div class="mt-5">
+                    <app-timeline [data]="data.experiences"></app-timeline>
+                  </div>
                 </div>
               </div>
             </div>
