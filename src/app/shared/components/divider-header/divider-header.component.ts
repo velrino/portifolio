@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class DividerHeaderComponent implements OnInit {
 
   @Input('data') data: string;
+  @Input('icon') icon: string;
 
   constructor() { }
 
