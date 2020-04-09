@@ -38,7 +38,7 @@ $secondary-timeline-color: #ec7000;
 
 /* container-timeline around content */
 .container-timeline {
-  padding: 0px 40px;
+  padding: none;
   position: relative;
   background-color: inherit;
   width: 50%;
@@ -62,11 +62,13 @@ $secondary-timeline-color: #ec7000;
 /* Place the container-timeline to the left */
 .left-timeline {
   left: 0;
+  padding-right: 40px;
 }
 
 /* Place the container-timeline to the right */
 .right-timeline {
   left: 50%;
+  padding-left: 40px;
 }
 
 /* Add arrows to the left container-timeline (pointing right) */
