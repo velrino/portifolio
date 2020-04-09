@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     },
     timeline: [
       {
-        icon: 'fab fa-github fa-2x',
+        icon: 'fab fa-github fa-2x animated infinite pulse',
         name: 'experiences',
         data: [
           {
