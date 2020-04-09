@@ -1,19 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-timeline',
+  selector: 'timeline',
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss']
 })
-export class TimelineComponent implements OnInit {
+export class TimelineComponent {
 
   @Input('data') data: any;
 
   constructor() { }
-
-  ngOnInit(): void {
-    console.log(this.data);
-  }
 
   checkNumberIsEven(value: number) {
     return value % 2 === 0;
