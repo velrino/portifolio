@@ -198,8 +198,6 @@ export class AppComponent implements OnInit {
   }
 
   baseUrl(){
-    const teste = window.location.origin;
-    console.log(teste)
-    return teste;
+    return window.location.origin;;
   }
 }
