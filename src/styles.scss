@@ -4,6 +4,8 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css";
 
 $primary-color: #212529;
+$secondary-color: #e5f2ff;
+$third-timeline-color: #3a9dff;
 
 body {
   background-color: $primary-color;
@@ -15,6 +17,16 @@ body {
 
 .bg-white {
   background-color: white;
+  color: $primary-color !important;
+}
+
+.bg-primary {
+  background-color: $third-timeline-color !important;
+  color: white !important;
+}
+
+.bg-light {
+  background-color: #ddeeff !important;
   color: $primary-color !important;
 }
 
