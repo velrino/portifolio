@@ -68,8 +68,8 @@
                 <div class="col-12 mt-5 mb-5" *ngFor="let item of data.knowledges; let i = index">
                   <divider-header [data]="item.name" [icon]="item.icon"></divider-header>
                   <div class="mt-5">
-                    <skills *ngIf="item.type == 'skill'" [data]="item.data"></skills>
-                    <timeline *ngIf="item.type == 'timeline'" [data]="item.data"></timeline>
+                    <skills *ngIf="checkItemType(item, 'skill')" [data]="item.data"></skills>
+                    <timeline *ngIf="checkItemType(item, 'timeline')" [data]="item.data"></timeline>
                   </div>
                 </div>
               </div>

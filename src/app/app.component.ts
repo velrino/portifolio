@@ -101,4 +101,8 @@ export class AppComponent implements OnInit {
 
     return diffDays-1;
   }
+
+  checkItemType(item: any, type: string) {
+    return item.type == type;
+  }
 }
