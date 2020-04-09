@@ -2,6 +2,25 @@
 @import "assets/styles/argon-design-system.min.css";
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css";
 
+$primary-color: #212529;
+
 body {
-    background-color: #1d1d1f;
+  background-color: $primary-color;
+}
+
+.bg-dark {
+  background-color: $primary-color;
+}
+
+.bg-white {
+  background-color: white;
+  color: $primary-color !important;
+}
+
+.fill-secondary {
+  fill: $primary-color;
+}
+
+.borderless {
+    border: none !important;
 }

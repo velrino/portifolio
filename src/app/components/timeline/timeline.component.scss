@@ -1,4 +1,4 @@
-$primary-timeline-color: #212529;
+$primary-timeline-color: white;
 $secondary-timeline-color: #ec7000;
 /* The actual timeline (the vertical ruler) */
 .card-header.bg-primary {
@@ -17,10 +17,6 @@ $secondary-timeline-color: #ec7000;
     background-color: $primary-timeline-color !important;
     border: none !important;
     border-top: medium solid $secondary-timeline-color !important;
-}
-
-.borderless {
-    border: none !important;
 }
 
 .timeline {

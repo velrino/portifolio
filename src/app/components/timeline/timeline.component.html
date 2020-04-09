@@ -1,14 +1,14 @@
 <div class="timeline">
     <div *ngFor="let item of data; let i = index" [class]="handleClassContainer(i)">
-        <div class="card text-white bg-dark borderless">
+        <div class="card text-white bg-white borderless">
             <h5 class="card-header text-white bg-primary">{{item.title}}</h5>
             <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
             <div class="card-body">
               <p class="card-text">{{item.text}}</p>
             </div>
-            <ul class="list-group bg-dark border-top" *ngIf="item.list.show">
+            <ul class="list-group bg-white border-top" *ngIf="item.list.show">
               <li class="list-group-item active">{{item.list.title}}</li>
-              <li class="list-group-item bg-dark borderless" *ngFor="let list_item of item.list.itens;">{{list_item}}</li>
+              <li class="list-group-item bg-white borderless" *ngFor="let list_item of item.list.itens;">{{list_item}}</li>
             </ul>
             <div class="card-body border-top" *ngIf="item.link.show">
               <a [href]="item.link.url" target="_blank" class="card-link">{{item.link.label}}</a>
