@@ -13,8 +13,24 @@ export class AppComponent implements OnInit {
       country: "Brasil",
       state: "São Paulo",
     },
-    timeline: [
+    knowledges: [
       {
+        type: 'skill',
+        icon: 'fab fa-github fa-2x animated infinite pulse',
+        name: 'skills',
+        data: [
+          {
+            title: 'Lorem',
+            itens: ['NodeJs', 'Angular']
+          },
+          {
+            title: 'Other',
+            itens: ['Flutter', 'Dart', 'APIs']
+          },
+        ]
+      },
+      {
+        type: 'timeline',
         icon: 'fab fa-github fa-2x animated infinite pulse',
         name: 'experiences',
         data: [
