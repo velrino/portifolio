@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { DividerHeaderComponent } from './shared/components/divider-header/divider-header.component';
 import { SkillsComponent } from './shared/components/skills/skills.component';
+import { GalleryComponent } from './shared/components/gallery/gallery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TimelineComponent,
     DividerHeaderComponent,
-    SkillsComponent
+    SkillsComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
