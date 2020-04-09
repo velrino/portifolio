@@ -14,7 +14,7 @@
     <section class="section">
       <div class="container">
         <div class="card card-profile mt--300 bg-dark text-white borderless">
-          <div class="px-4 mb-5">
+          <div class="mb-5">
             <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2">
                 <div class="card-profile-image">
@@ -23,7 +23,7 @@
               </div>
             </div>
           </div>
-          <div class="px-4 mt-5">
+          <div class="mt-5">
             <div class="text-center mt-5">
               <h3 class="text-white">Velrino<span class="font-weight-light">, {{calculateYearOld()}}</span></h3>
               <div class="h6 font-weight-300 text-white"><i class="ni location_pin mr-2"></i>{{data.location.state}},
@@ -60,7 +60,7 @@
                 </a>
               </div>
             </div>
-            <div class="mt-5 py-5 text-center">
+            <div class="mt-5 text-center">
               <div class="row justify-content-center">
                 <div class="col-lg-3 col-md-12 mt-5 mb-5 typewriter">
                   <h4 class="font-italic text-white" [innerHTML]="data.text"></h4>
@@ -68,8 +68,8 @@
                 <div class="col-12 mt-5 mb-5" *ngFor="let item of data.knowledges; let i = index">
                   <divider-header [data]="item.name" [icon]="item.icon"></divider-header>
                   <div class="mt-5">
-                    <skills *ngIf="item.type == 'skill'" [data]="item.data" ></skills>
-                    <timeline *ngIf="item.type == 'timeline'"  [data]="item.data" ></timeline>
+                    <skills *ngIf="item.type == 'skill'" [data]="item.data"></skills>
+                    <timeline *ngIf="item.type == 'timeline'" [data]="item.data"></timeline>
                   </div>
                 </div>
               </div>
@@ -79,4 +79,9 @@
       </div>
     </section>
   </div>
+</div>
+<div class="text-center mt-5 mb-5">
+  <a href="https://github.com/velrino/portifolio" target="_blank">This Angular code</a>
+  <span class="ml-3 mr-3">|</span>
+  <a href="https://github.com/velrino/velrino.github.io" target="_blank">This dist code</a>
 </div>
