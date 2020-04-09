@@ -24,14 +24,16 @@
             </div>
           </div>
           <div class="mt-5">
-            <div class="text-center mt-5">
+            <div class="text-center mt-5 mb-5">
               <h3 class="text-white">Velrino<span class="font-weight-light">, {{calculateYearOld()}}</span></h3>
-              <div class="h6 font-weight-300 text-white"><i class="ni location_pin mr-2"></i>{{data.location.state}},
-                {{data.location.country}}</div>
+              <div class="h6 font-weight-300 text-white"><i class="fas fa-map-marked-alt"></i>
+                {{data.location.state}},{{data.location.country}}</div>
+              <a [href]="baseUrl()" class="h6 font-weight-300 text-white"><i class="fas fa-globe-americas"></i>
+                {{ baseUrl() }}</a>
+
             </div>
 
-
-            <div class="row row-grid align-items-center mb-5">
+            <div class="row row-grid align-items-center">
               <div class="col-12 text-center btn-wrapper">
                 <a target="_blank" href="https://twitter.com/velrino" rel="nofollow"
                   class="btn btn-icon-only btn-twitter rounded-circle" data-toggle="tooltip"
@@ -48,13 +50,23 @@
                   data-original-title="Follow us">
                   <span class="btn-inner--icon"><i class="fab fa-instagram"></i></span>
                 </a>
+                <a target="_blank" href="https://play.google.com/store/apps/developer?id=Velrino" rel="nofollow"
+                  class="btn btn-icon-only btn-youtube rounded-circle" data-toggle="tooltip"
+                  data-original-title="Star on Github">
+                  <span class="btn-inner--icon"><i class="fab fa-google-play"></i></span>
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/velrino/" rel="nofollow"
+                  class="btn btn-icon-only btn-facebook rounded-circle" data-toggle="tooltip"
+                  data-original-title="Follow us">
+                  <span class="btn-inner--icon"><i class="fab fa-linkedin-in"></i></span>
+                </a>
                 <a target="_blank" href="https://youtube.com/velrino" rel="nofollow"
                   class="btn btn-icon-only btn-youtube rounded-circle" data-toggle="tooltip"
                   data-original-title="Follow us">
                   <span class="btn-inner--icon"><i class="fab fa-youtube"></i></span>
                 </a>
                 <a target="_blank" href="https://github.com/velrino" rel="nofollow"
-                  class="btn btn-icon-only btn-github rounded-circle" data-toggle="tooltip"
+                  class="btn btn-icon-only bg-white rounded-circle" data-toggle="tooltip"
                   data-original-title="Star on Github">
                   <span class="btn-inner--icon"><i class="fab fa-github"></i></span>
                 </a>
@@ -70,6 +82,7 @@
                   <div class="mt-5">
                     <skills *ngIf="checkItemType(item, 'skill')" [data]="item.data"></skills>
                     <timeline *ngIf="checkItemType(item, 'timeline')" [data]="item.data"></timeline>
+                    <gallery *ngIf="checkItemType(item, 'galery')" [data]="item.data"></gallery>
                   </div>
                 </div>
               </div>

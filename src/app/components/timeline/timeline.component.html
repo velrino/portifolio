@@ -6,11 +6,14 @@
             <div class="card-body">
               <p class="card-text">{{item.text}}</p>
             </div>
-            <ul class="list-group bg-light" *ngIf="item.list.show">
-              <li class="list-group-item bg-light active">{{item.list.title}}</li>
-              <li class="list-group-item bg-white borderless" *ngFor="let list_item of item.list.itens;">{{list_item}}</li>
-            </ul>
-            <div class="card-body border-top" *ngIf="item.link.show">
+            <div class="card-footer" *ngIf="item.list.show">
+              <div class="row text-center">
+                  <div class="col-4" *ngFor="let skill of item.list.skills">
+                      <a [href]="skill.url" target="_blank" class="card-link">{{skill.label}}</a>
+                  </div>  
+              </div>
+          </div>
+            <div class="card-footer bg-secondary" *ngIf="item.link.show">
               <a [href]="item.link.url" target="_blank" class="card-link">{{item.link.label}}</a>
             </div>
           </div>

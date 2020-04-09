@@ -6,6 +6,7 @@
 $primary-color: #212529;
 $secondary-color: #e5f2ff;
 $third-timeline-color: #3a9dff;
+$fouth-color: #184a7b;
 
 body {
   background-color: $primary-color;
@@ -13,6 +14,13 @@ body {
 
 .bg-dark {
   background-color: $primary-color;
+}
+
+.bg-secondary {
+  background-color: $fouth-color !important;
+  .card-link {
+    color: white !important;
+  }
 }
 
 .bg-white {
