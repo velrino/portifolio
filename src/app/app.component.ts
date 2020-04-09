@@ -8,53 +8,59 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   data = {
     age: 21,
-    text: 'Lorem ipsum',
+    text: "Don't work hard. Work intelligent.",
     location: {
       country: "Brasil",
       state: "São Paulo",
     },
-    experiences: [
+    timeline: [
       {
-        title: 'Lorem',
-        text: 'Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum',
-        list: {
-          show: true,
-          title: 'example',
-          itens: ['NodeJs', 'Angular']
-        },
-        link: {
-          show: true,
-          label: 'example',
-          url: 'example',
-        }
-      },
-      {
-        title: 'Shazam',
-        text: 'Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum',
-        list: {
-          show: false,
-          title: 'example',
-          itens: ['NodeJs', 'Angular']
-        },
-        link: {
-          show: true,
-          label: 'example',
-          url: 'example',
-        }
-      },
-      {
-        title: 'Shazam',
-        text: 'Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum',
-        list: {
-          show: true,
-          title: 'example',
-          itens: ['NodeJs', 'Angular']
-        },
-        link: {
-          show: false,
-          label: 'example',
-          url: 'example',
-        }
+        icon: 'fab fa-github fa-2x',
+        name: 'experiences',
+        data: [
+          {
+            title: 'Lorem',
+            text: 'Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum',
+            list: {
+              show: true,
+              title: 'example',
+              itens: ['NodeJs', 'Angular']
+            },
+            link: {
+              show: true,
+              label: 'example',
+              url: 'example',
+            }
+          },
+          {
+            title: 'Shazam',
+            text: 'Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum',
+            list: {
+              show: false,
+              title: 'example',
+              itens: ['NodeJs', 'Angular']
+            },
+            link: {
+              show: true,
+              label: 'example',
+              url: 'example',
+            }
+          },
+          {
+            title: 'Shazam',
+            text: 'Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum',
+            list: {
+              show: true,
+              title: 'example',
+              itens: ['NodeJs', 'Angular']
+            },
+            link: {
+              show: false,
+              label: 'example',
+              url: 'example',
+            }
+          }
+        ]
       }
     ]
   }
