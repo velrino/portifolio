@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { DividerHeaderComponent } from './shared/components/divider-header/divider-header.component';
+import { SkillsComponent } from './shared/components/skills/skills.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TimelineComponent,
-    DividerHeaderComponent
+    DividerHeaderComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,
