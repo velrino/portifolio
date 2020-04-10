@@ -73,8 +73,8 @@
             </div>
             <div class="mt-5 text-center">
               <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-12 mt-5 mb-5 typewriter">
-                  <h4 class="font-italic text-white" [innerHTML]="data.text"></h4>
+                <div class="col-lg-3 col-md-12 mt-5 mb-5">
+                  <h4 class="font-italic text-white animated infinite tada" [innerHTML]="data.text"></h4>
                 </div>
                 <div class="col-12 mt-5 mb-5" *ngFor="let item of data.knowledges; let i = index">
                   <divider-header [data]="item.name" [icon]="item.icon"></divider-header>
