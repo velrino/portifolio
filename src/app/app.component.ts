@@ -23,6 +23,9 @@ export class AppComponent implements OnInit {
     const response = await this.requestService.request(this.component.url);
     if (!response.error) {
       this.data = response.result
+    } else if (response.error) {
+      this.component.url = '/assets/data/data.json';
+      await this.getData();
     }
   }
 
