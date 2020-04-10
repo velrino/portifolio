@@ -8,22 +8,73 @@
     "knowledges": [
         {
             "type": "skill",
-            "icon": "fab fa-github fa-2x animated infinite pulse",
-            "name": "skills",
+            "icon": "fas fa-jedi fa-2x animated infinite pulse",
+            "name": "Tech skills",
             "data": [
                 {
-                    "title": "Lorem",
+                    "title": "Back-end",
                     "itens": [
-                        "NodeJs",
-                        "Angular"
+                        { "name":"AdonisJS" , "value": 70 },
+                        { "name":"Express" , "value": 70 },
+                        { "name":"Hapi.JS" , "value": 50 },
+                        { "name":"GraphQL" , "value": 30 },
+                        { "name":"Laravel" , "value": 70 },
+                        { "name":"NestJS" , "value": 70 },
+                        { "name":".Net" , "value": 30 },
+                        { "name":"NodeJs" , "value": 70 },
+                        { "name":"MongoDB" , "value": 50 },
+                        { "name":"MySQL" , "value": 50 },
+                        { "name":"ORM" , "value": 70 },
+                        { "name":"PostgreSQL" , "value": 50 },
+                        { "name":"Spring Boot" , "value": 30 }
                     ]
                 },
                 {
-                    "title": "Other",
+                    "title": "Front-end & Mobile",
                     "itens": [
-                        "Flutter",
-                        "Dart",
-                        "APIs"
+                        { "name":"Accessibility" , "value": 70 },
+                        { "name":"Android" , "value": 50 },
+                        { "name":"Angular" , "value": 70 },
+                        { "name":"Bootstrap" , "value": 70 },
+                        { "name":"CSS" , "value": 70 },
+                        { "name":"Flutter" , "value": 50 },
+                        { "name":"HTML" , "value": 70 },
+                        { "name":"Ionic" , "value": 70 },
+                        { "name":"IOS" , "value": 30 },
+                        { "name":"Material Design" , "value": 50 }
+                    ]
+                },
+                {
+                    "title": "Others",
+                    "itens": [
+                        { "name":"Automatization" , "value": 70 },
+                        { "name":"APIs" , "value": 70 },
+                        { "name":"AWS" , "value": 50 },
+                        { "name":"DDD" , "value": 70 },
+                        { "name":"Docker" , "value": 70 },
+                        { "name":"Heroku" , "value": 70 },
+                        { "name":"Git" , "value": 70 },
+                        { "name":"Linux" , "value": 70 },
+                        { "name":"OpenShift" , "value": 70 },
+                        { "name":"TDD" , "value": 70 },
+                        { "name":"Scrum" , "value": 70 }
+                    ]
+                },
+                {
+                    "title": "Programming language",
+                    "itens": [
+                        { "name":"C++" , "value": 50 },
+                        { "name":"C#" , "value": 50 },
+                        { "name":"Dart" , "value": 50 },
+                        { "name":"Kotlin" , "value": 50 },
+                        { "name":"Java" , "value": 50 },
+                        { "name":"Javascript" , "value": 70 },
+                        { "name":"Go" , "value": 30 },
+                        { "name":"Lua" , "value": 10 },
+                        { "name":"PHP" , "value": 70 },
+                        { "name":"Python" , "value": 30 },
+                        { "name":"Swift" , "value": 30 },
+                        { "name":"Typescript" , "value": 70 }
                     ]
                 }
             ]
@@ -90,84 +141,78 @@
             "name": "experiences",
             "data": [
                 {
-                    "title": "Lorem",
-                    "text": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum",
-                    "list": {
-                        "show": true,
-                        "title": "example",
-                        "skills": [
-                            {
-                                "url": "https://stackshare.io/unity-3d",
-                                "label": "Unity 3D"
-                            },
-                            {
-                                "url": "https://stackshare.io/blender",
-                                "label": "Blender"
-                            },
-                            {
-                                "url": "https://stackshare.io/c-sharp",
-                                "label": "C#"
-                            }
-                        ]
-                    },
-                    "link": {
-                        "show": true,
-                        "label": "example",
-                        "url": "example"
-                    }
-                },
-                {
-                    "title": "Shazam",
-                    "text": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum",
+                    "title": "<strong>ITAU UNIBANCO</strong><br>Software Engineer<br>(06/2019 - ?)",
+                    "url": "https://www.itau.com.br/",
+                    "text": "",
                     "list": {
                         "show": false,
                         "title": "example",
-                        "skills": [
-                            {
-                                "url": "https://stackshare.io/unity-3d",
-                                "label": "Unity 3D"
-                            },
-                            {
-                                "url": "https://stackshare.io/blender",
-                                "label": "Blender"
-                            },
-                            {
-                                "url": "https://stackshare.io/c-sharp",
-                                "label": "C#"
-                            }
-                        ]
-                    },
-                    "link": {
-                        "show": true,
-                        "label": "example",
-                        "url": "example"
-                    }
-                },
-                {
-                    "title": "Shazam",
-                    "text": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum Lorem ipsum Lorem ipsum",
-                    "list": {
-                        "show": true,
-                        "title": "example",
-                        "skills": [
-                            {
-                                "url": "https://stackshare.io/unity-3d",
-                                "label": "Unity 3D"
-                            },
-                            {
-                                "url": "https://stackshare.io/blender",
-                                "label": "Blender"
-                            },
-                            {
-                                "url": "https://stackshare.io/c-sharp",
-                                "label": "C#"
-                            }
-                        ]
+                        "skills": []
                     },
                     "link": {
                         "show": false,
-                        "label": "example",
-                        "url": "example"
+                        "label": "06/2019 - ?",
+                        "url": "https://www.itau.com.br/"
+                    }
+                },
+                {
+                    "title": "<strong>VELRINO</strong><br>Freelancer<br>(02/2015 - ?)",
+                    "text": "",
+                    "url": "#",
+                    "list": {
+                        "show": false,
+                        "title": "example",
+                        "skills": []
+                    },
+                    "link": {
+                        "show": false,
+                        "label": "02/2015 - ?",
+                        "url": "#"
+                    }
+                },
+                {
+                    "title": "<strong>ACCENTURE</strong><br>Software Engineer<br>(02/2018 - 05/2019)",
+                    "url": "https://www.accenture.com/",
+                    "text": "",
+                    "list": {
+                        "show": false,
+                        "title": "example",
+                        "skills": []
+                    },
+                    "link": {
+                        "show": false,
+                        "label": "",
+                        "url": ""
+                    }
+                },
+                {
+                    "title": "<strong>QUERO QUITAR</strong><br>Analyst Pleno<br>(04/2016 - 01/2017)",
+                    "url": "https://www.queroquitar.com.br/",
+                    "text": "",
+                    "list": {
+                        "show": false,
+                        "title": "example",
+                        "skills": []
+                    },
+                    "link": {
+                        "show": false,
+                        "label": "",
+                        "url": "https://www.queroquitar.com.br/"
+                    }
+                },
+                {
+                    "title": "<strong>INGRESSE</strong><br>Intern<br>(12/2014 - 03/2015)",
+                    "url": "https://www.ingresse.com/",
+                    "text": "",
+                    "list": {
+                        "show": false,
+                        "title": "example",
+                        "skills": []
+                    },
+                    "link": {
+                        "show": false,
+                        "label": "12/2014 - 03/2015",
+                        "url": "https://ingresse.com/"
                     }
                 }
             ]

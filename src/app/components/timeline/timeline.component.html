@@ -1,9 +1,12 @@
 <div class="timeline">
     <div *ngFor="let item of data; let i = index" [class]="handleClassContainer(i)">
         <div class="card text-white bg-white borderless">
-            <h5 class="card-header text-white bg-primary">{{item.title}}</h5>
+            <h5 *ngIf="!item.url" class="card-header text-white bg-primary">{{item.title}}</h5>
+            <a *ngIf="item.url" [href]="item.url" target="_blank">
+              <div class="card-header text-white bg-primary" [innerHTML]="item.title"></div>
+            </a>
             <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
-            <div class="card-body">
+            <div class="card-body" *ngIf="item.text">
               <p class="card-text">{{item.text}}</p>
             </div>
             <div class="card-footer" *ngIf="item.list.show">
