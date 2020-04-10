@@ -32,7 +32,7 @@ export class RequestService {
       .toPromise()
       .then(result => Object.assign(response, { error: false, result }))
       .catch(result => Object.assign(response, { error: true, result }))
-      .finally(() => setTimeout(() => this._spinner.hide(), 3000));
+      .finally(() => setTimeout(() => this._spinner.hide(), 1000));
 
     return response;
   }
