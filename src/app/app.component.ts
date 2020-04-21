@@ -8,7 +8,7 @@ import { RequestService } from 'src/app/shared/services/request.service';
 })
 export class AppComponent implements OnInit {
   component = {
-    url: 'https://raw.githubusercontent.com/velrino/data/master/portifolio/data.json'
+    url: '/assets/data/data.json'
   };
   data: any;
 
@@ -23,9 +23,6 @@ export class AppComponent implements OnInit {
     const response = await this.requestService.request(this.component.url);
     if (!response.error) {
       this.data = response.result
-    } else if (response.error) {
-      this.component.url = '/assets/data/data.json';
-      await this.getData();
     }
   }
 
