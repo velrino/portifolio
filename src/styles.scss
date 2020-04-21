@@ -44,15 +44,3 @@ body {
 .card-profile-image img {
   border: 3px solid $third-timeline-color;
 }
-
-@media print {
-  body {
-    background-color: $primary-color !important;
-    -webkit-print-color-adjust: exact !important;
-  }
-
-  .page-break {
-    display: block !important;
-    page-break-before: always !important;
-  }
-}
