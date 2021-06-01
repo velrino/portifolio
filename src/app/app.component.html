@@ -1,99 +1,182 @@
-<ngx-spinner bdColor="#212529" [fullScreen]="true" template="<img src='assets/imgs/velrino-white.png' height='150' class='animated infinite pulse'/>"></ngx-spinner>
-<div class="profile-page">
-  <div class="wrapper">
-    <section class="section-profile-cover section-shaped my-0">
-      <!-- Circles background -->
-      <img class="bg-image" src="/assets/imgs/cover.jpg" style="width: 100%;">
-      <!-- SVG separator -->
-      <div class="separator separator-bottom separator-skew">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
-          xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-secondary" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container">
-        <div class="card card-profile mt--300 bg-dark text-white borderless">
-          <div class="mb-5">
-            <div class="row justify-content-center">
-              <div class="col-lg-3 order-lg-2">
-                <div class="card-profile-image">
-                  <img src="/assets/imgs/profile.jpg" class="rounded-circle">
+<!-- HOME -->
+<div *ngIf="actualStep('home')" class="bg-velrino d-flex align-items-center animate__animated animate__slideInLeft">
+    <span class="mask bg-opacity"></span>
+    <div class="container layer-presentation">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="d-flex align-items-center align-self-center align-content-center justify-content-center h-100vh">
+                    <div class="d-flex flex-column">
+                        <div class="text-white text-4 text-uppercase text-center animate__animated animate__slideInLeft animate__slower">don't work hard,</div>
+                        <div class="text-white text-4 text-uppercase text-center animate__animated animate__slideInRight animate__slower">Work smart!</div>
+                        <div class="row justify-content-center mt-3">
+                            <div class="col-3 clickable" (click)="setStep('skills')">
+                                <span class="fa-stack fa-1x scale-1-5">
+                            <i class="far fa-circle fa-stack-2x icon-background"></i>
+                            <i class="fas fa-jedi fa-stack-1x"></i>
+                          </span>
+                            </div>
+                            <div class="col-3 clickable" (click)="setStep('portfolio')">
+                                <span class="fa-stack fa-1x scale-1-5" style="vertical-align: top;">
+                            <i class="far fa-circle fa-stack-2x icon-background"></i>
+                            <i class="fas fa-briefcase fa-stack-1x"></i>
+                          </span>
+                            </div>
+                            <div class="col-3 clickable" (click)="setStep('experiences')">
+                                <span class="fa-stack fa-1x scale-1-5" style="vertical-align: top;">
+                          <i class="far fa-circle fa-stack-2x icon-background"></i>
+                          <i class="fas fa-building fa-stack-1x"></i>
+                        </span>
+                            </div>
+                            <div class="col-3 clickable" (click)="setStep('contact')">
+                                <span class="fa-stack fa-1x scale-1-5" style="vertical-align: top;">
+                            <i class="far fa-circle fa-stack-2x icon-background"></i>
+                            <i class="fas fa-envelope-open fa-stack-1x"></i>
+                          </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="mt-5" *ngIf="data">
-            <div class="text-center mt-5 mb-5">
-              <h3 class="text-white">Velrino<span class="font-weight-light">, {{calculateYearOld()}}</span></h3>
-              <div class="h6 font-weight-300 text-white"><i class="fas fa-map-marked-alt"></i>
-                {{data.location.state}},{{data.location.country}}</div>
-              <a [href]="baseUrl()" class="h6 font-weight-300 text-white"><i class="fas fa-globe-americas"></i>
-                {{ baseUrl() }}</a>
-            </div>
-            <div class="row row-grid align-items-center">
-              <div class="col-12 text-center btn-wrapper">
-                <a target="_blank" href="https://twitter.com/velrino" rel="nofollow"
-                  class="btn btn-icon-only btn-twitter rounded-circle" data-toggle="tooltip"
-                  data-original-title="Follow us">
-                  <span class="btn-inner--icon"><i class="fab fa-twitter"></i></span>
-                </a>
-                <a target="_blank" href="https://www.facebook.com/velrino.magalhaes/" rel="nofollow"
-                  class="btn-icon-only rounded-circle btn btn-facebook" data-toggle="tooltip"
-                  data-original-title="Like us">
-                  <span class="btn-inner--icon"><i class="fab fa-facebook-f"></i></span>
-                </a>
-                <a target="_blank" href="https://instagram.com/velrino" rel="nofollow"
-                  class="btn btn-icon-only btn-instagram rounded-circle" data-toggle="tooltip"
-                  data-original-title="Follow us">
-                  <span class="btn-inner--icon"><i class="fab fa-instagram"></i></span>
-                </a>
-                <a target="_blank" href="https://play.google.com/store/apps/developer?id=Velrino" rel="nofollow"
-                  class="btn btn-icon-only btn-youtube rounded-circle" data-toggle="tooltip"
-                  data-original-title="Star on Github">
-                  <span class="btn-inner--icon"><i class="fab fa-google-play"></i></span>
-                </a>
-                <a target="_blank" href="https://www.linkedin.com/in/velrino/" rel="nofollow"
-                  class="btn btn-icon-only btn-facebook rounded-circle" data-toggle="tooltip"
-                  data-original-title="Follow us">
-                  <span class="btn-inner--icon"><i class="fab fa-linkedin-in"></i></span>
-                </a>
-                <a target="_blank" href="https://youtube.com/velrino" rel="nofollow"
-                  class="btn btn-icon-only btn-youtube rounded-circle" data-toggle="tooltip"
-                  data-original-title="Follow us">
-                  <span class="btn-inner--icon"><i class="fab fa-youtube"></i></span>
-                </a>
-                <a target="_blank" href="https://github.com/velrino" rel="nofollow"
-                  class="btn btn-icon-only bg-white rounded-circle" data-toggle="tooltip"
-                  data-original-title="Star on Github">
-                  <span class="btn-inner--icon"><i class="fab fa-github"></i></span>
-                </a>
-              </div>
-            </div>
-            <div class="mt-5 text-center">
-              <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-12 mt-5 mb-5">
-                  <h4 class="font-italic text-white" [innerHTML]="data.text"></h4>
-                </div>
-                <div class="col-12 mt-5 mb-5" *ngFor="let item of data.knowledges; let i = index">
-                  <divider-header [data]="item.name" [icon]="item.icon"></divider-header>
-                  <div class="mt-5 page-break">
-                    <skills *ngIf="checkItemType(item, 'skill')" [data]="item.data"></skills>
-                    <timeline *ngIf="checkItemType(item, 'timeline')" [data]="item.data"></timeline>
-                    <gallery *ngIf="checkItemType(item, 'galery')" [data]="item.data"></gallery>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
-  </div>
+    </div>
 </div>
-<div class="text-center mt-5 mb-5">
-  <a href="https://github.com/velrino/portifolio" target="_blank">This Angular code</a>
-  <span class="ml-3 mr-3">|</span>
-  <a href="https://github.com/velrino/velrino.github.io" target="_blank">This dist code</a>
+<!-- NAVBAR -->
+<nav *ngIf="!actualStep('home')" class="navbar fixed-top navbar-light bg-light">
+    <div class="ml-auto clickable pt-3" (click)="sideNavShow()">
+        <i class="fas fa-bars fa-2x"></i>
+    </div>
+</nav>
+<!-- SKILLS -->
+<div *ngIf="actualStep('skills') && data" class="container my-5 animate__animated animate__slideInLeft">
+    <div class="row justify-content-center">
+        <div class="col-12 text-white text-center h3">
+            <i class="fas fa-jedi fa-2x mb-3"></i>
+            <div class="font-weight-bold text-uppercase">
+                Skills
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let knowledge of data.skills; let i = index" class="row justify-content-center">
+        <div class="col-12 mt-3">
+            <hr class="rounded w-50">
+            <div class="text-center text-white text-uppercase h3 font-weight-bold mb-5">
+                {{knowledge.title}}
+            </div>
+        </div>
+        <div *ngFor="let item of knowledge.itens; let i2 = index" class="col-md-3 col-6 text-center">
+            <circle-progress [percent]="item.value"></circle-progress>
+            <p class="text-white text-uppercase">{{item.name}}</p>
+        </div>
+    </div>
+</div>
+<!-- PORTFOLIO -->
+<div *ngIf="actualStep('portfolio') && data" class="container my-5 animate__animated animate__slideInLeft">
+    <div class="row justify-content-center">
+        <div class="col-12 text-white text-center h3">
+            <i class="fas fa-briefcase fa-2x mb-3"></i>
+            <div class="font-weight-bold text-uppercase">
+                portfolio
+            </div>
+        </div>
+    </div>
+    <gallery [data]="data.projects"></gallery>
+</div>
+<!-- EXPERIENCES -->
+<div *ngIf="actualStep('experiences') && data" class="container my-5 animate__animated animate__slideInLeft">
+    <div class="row justify-content-center">
+        <div class="col-12 text-white text-center h3">
+            <i class="fas fa-building fa-2x mb-3"></i>
+            <div class="font-weight-bold text-uppercase">
+                experiences
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div id="timeline">
+            <!-- ITEM -->
+            <div *ngFor="let item of data.expirence; let i = index" class="timeline-item">
+                <div>
+                    <div class="timeline-icon" style="background-color: {{item?.bgColor}};">
+                        <img [src]="item.img" [height]="item.height ? item.height : 30">
+                    </div>
+                    <div class="timeline-content text-left" [class.right]="i % 2 !== 0">
+                        <p class="font-weight-normal">
+                            <span> {{ item.title }}</span>
+                        </p>
+                        <p class="font-weight-normal">
+                            <span> {{ item.job }}</span>
+                        </p>
+                        <p class="font-weight-normal">
+                            <span> {{ item.period }}</span>
+                        </p>
+                        <a [attr.href]="item.url" target="_blank"> Acessar </a>
+                    </div>
+                </div>
+            </div>
+            <!-- ITEM -->
+        </div>
+    </div>
+</div>
+<!-- CONTACT -->
+<div *ngIf="actualStep('contact') && data" class="container animate__animated animate__slideInLeft">
+    <div class="row justify-content-center d-flex align-items-center align-self-center align-content-center justify-content-center h-100vh">
+        <div class="col-12 text-white text-center h3 mb-3">
+            <i class="fas fa-envelope-open fa-2x mb-3"></i>
+            <div class="font-weight-bold text-uppercase">
+                CONTACT
+            </div>
+        </div>
+        <div class="col-12 text-center btn-wrapper">
+            <a target="_blank" href="https://twitter.com/velrino" rel="nofollow" class="btn btn-icon-only btn-twitter rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
+                <span class="btn-inner--icon"><i class="fab fa-twitter"></i></span>
+            </a>
+            <a target="_blank" href="https://www.facebook.com/velrino.magalhaes/" rel="nofollow" class="btn-icon-only rounded-circle btn btn-facebook" data-toggle="tooltip" data-original-title="Like us">
+                <span class="btn-inner--icon"><i class="fab fa-facebook-f"></i></span>
+            </a>
+            <a target="_blank" href="https://instagram.com/velrino" rel="nofollow" class="btn btn-icon-only btn-instagram rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
+                <span class="btn-inner--icon"><i class="fab fa-instagram"></i></span>
+            </a>
+            <a target="_blank" href="https://play.google.com/store/apps/developer?id=Velrino" rel="nofollow" class="btn btn-icon-only btn-youtube rounded-circle" data-toggle="tooltip" data-original-title="Star on Github">
+                <span class="btn-inner--icon"><i class="fab fa-google-play"></i></span>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/velrino/" rel="nofollow" class="btn btn-icon-only btn-facebook rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
+                <span class="btn-inner--icon"><i class="fab fa-linkedin-in"></i></span>
+            </a>
+            <a target="_blank" href="https://youtube.com/velrino" rel="nofollow" class="btn btn-icon-only btn-youtube rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
+                <span class="btn-inner--icon"><i class="fab fa-youtube"></i></span>
+            </a>
+            <a target="_blank" href="https://github.com/velrino" rel="nofollow" class="btn btn-icon-only bg-white rounded-circle" data-toggle="tooltip" data-original-title="Star on Github">
+                <span class="btn-inner--icon"><i class="fab fa-github"></i></span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- SIDENAV -->
+<div [style.visibility]="showSideNav ? 'visible' : 'hidden'" id="side-nav-menu" class="new-side-bar animate__animated bg-dark">
+    <div class="custom-divider"></div>
+    <div class="mt-3">
+        <a (click)="setStep('home')" class="sidenav-menu-item text-uppercase" [class.active-route]="actualStep('home')">
+            <i class="fas fa-home"></i>
+            <span>home</span>
+        </a>
+        <a (click)="setStep('skills')" class="sidenav-menu-item text-uppercase" [class.active-route]="actualStep('skills')">
+            <i class="fas fa-jedi"></i>
+            <span>Skills</span>
+        </a>
+        <a (click)="setStep('portfolio')" class="sidenav-menu-item text-uppercase" [class.active-route]="actualStep('portfolio')">
+            <i class="fas fa-briefcase"></i>
+            <span>Portfolio</span>
+        </a>
+        <a (click)="setStep('experiences')" class="sidenav-menu-item text-uppercase" [class.active-route]="actualStep('experiences')">
+            <i class="fas fa-building"></i>
+            <span>experiences</span>
+        </a>
+        <a (click)="setStep('contact')" class="sidenav-menu-item text-uppercase" [class.active-route]="actualStep('contact')">
+            <i class="fas fa-envelope-open"></i>
+            <span>Contact</span>
+        </a>
+    </div>
+    <div class="custom-divider"></div>
+</div>
+<div [style.visibility]="showSideNav ? 'visible' : 'hidden'" class="new-side-bar-bg" (click)="hideSideNav()">
 </div>

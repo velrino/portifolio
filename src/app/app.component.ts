@@ -11,7 +11,8 @@ export class AppComponent implements OnInit {
     url: '/assets/data/data.json'
   };
   data: any;
-
+  step: 'home' | 'skills' | 'contact' | 'portfolio' | 'experiences' = 'home';
+  skillsList = [{}, {}]
   constructor(private requestService: RequestService) { }
 
   ngOnInit() {
@@ -19,11 +20,26 @@ export class AppComponent implements OnInit {
     this.calculateYearOld();
   }
 
+  setStep(step: 'home' | 'skills' | 'contact' | 'portfolio' | 'experiences') {
+    this.step = step;
+    window.scrollTo(0, 0);
+    this.hideSideNav()
+  }
+
+  actualStep(step: 'home' | 'skills' | 'contact' | 'portfolio' | 'experiences') {
+    return this.step === step;
+  }
+
   async getData() {
-    const response = await this.requestService.request(this.component.url);
-    if (!response.error) {
-      this.data = response.result
+    await this.requestService.request(this.component.url).then((response) => this.handleResponse(response));
+  }
+
+  handleResponse(response: any) {
+    for (let index = 0; index < response.result.skills.length; index++) {
+      const element = response.result.skills[index];
+      response.result.skills[index].itens = this.sortArray(element.itens, 'value');
     }
+    this.data = response.result;
   }
 
   getYear() {
@@ -49,5 +65,29 @@ export class AppComponent implements OnInit {
 
   baseUrl() {
     return window.location.origin;;
+  }
+
+  sortArray(array: any[], index: string) {
+    return array.sort((a, b) => b[index] - a[index])
+  }
+
+  showSideNav = false;
+  idSideNav = 'side-nav-menu';
+  hideSideNav() {
+    const getElement = document.getElementById(this.idSideNav);
+    getElement?.classList.remove('animate__slideInRight');
+    getElement?.classList.add('animate__slideOutRight');
+
+    setTimeout(() => this.showSideNav = false, 1000)
+  }
+
+  sideNavShow() {
+    const getElement = document.getElementById(this.idSideNav);
+
+    getElement?.classList.remove('animate__slideOutRight');
+    getElement?.classList.add('animate__slideInRight');
+
+    this.showSideNav = true;
+
   }
 }
