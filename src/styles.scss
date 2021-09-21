@@ -76,12 +76,9 @@ body {
 
 .bg-velrino {
     height: 100vh;
-    background-image: url('/assets/imgs/backgound-square.jpg');
+    background-image: url('/assets/imgs/1632266803909.webp');
     background-size: cover;
     background-position: center center;
-    @media (min-width: 768px) {
-        background-image: url('/assets/imgs/backgound.jpg');
-    }
 }
 
 .text-white {
