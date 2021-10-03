@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod && npm run upload",
+    "deploy": "ng build --prod && copy CNAME dist/ && npm run upload",
     "upload": "npx ngh --repo=git@github.com:velrino/velrino.github.io.git --name=velrino --email=denismagalhaesvelrino@gmail.com  --branch=master --dir=dist/"
   },
   "private": true,
