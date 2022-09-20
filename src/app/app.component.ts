@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RequestService } from 'src/app/shared/services/request.service';
 import { StepEnum } from './shared/interfaces/step.dto';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -16,14 +17,23 @@ export class AppComponent implements OnInit {
   StepEnum = StepEnum;
   step: StepEnum = StepEnum.home;
   skillsList = [{}, {}]
+  countryCodes = ['us', 'br'];
+  customLabels = {
+    'us': 'English',
+    'br': 'Brasil',
+  };
+  selectedCountryCode = 'br';
+  
   constructor(
     private requestService: RequestService,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService,
   ) { }
 
   ngOnInit() {
     this.handleQueryUrl()
     this.getData();
+    this.changeSelectedCountryCode()
     this.calculateYearOld();
   }
 
@@ -109,5 +119,18 @@ export class AppComponent implements OnInit {
 
     this.showSideNav = true;
 
+  }
+
+  languageIndex = 'language';
+  changeSelectedCountryCode(value: any = null): void {
+    if (value !== null) {
+      localStorage.setItem(this.languageIndex, value);
+    }
+    const language = localStorage.getItem(this.languageIndex);
+    let lang = language ? language : 'us';
+    this.translate.setDefaultLang(lang);
+    this.translate.use(lang);
+    this.selectedCountryCode = lang;
+    this.hideSideNav()
   }
 }

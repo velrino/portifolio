@@ -1,0 +1,13 @@
+{
+    "about": "about me",
+    "about_me": {
+        "line_1": "I'm Denis 'Velrino' Magalhães, I'm {{year}} years old.",
+        "line_2": "I have been in technology since 2015.",
+        "line_3": "I'm love technology since I was a child.",
+        "line_4": "I started my career as a full-stack, so I tried to understand how everything works (Back, Front and DevOps) to work always assuree the construction of a quality product.",
+        "line_5": "In parallel with my personal and professional evolution, I participated in events and learned more by being surrounded by exceptional people."
+    },
+    "contact": "contact",
+    "go_to": "Open link",
+    "experiences": "experiences"
+}

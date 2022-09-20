@@ -1,0 +1,13 @@
+{
+    "about": "Sobre mim",
+    "about_me": {
+        "line_1": "Sou Denis 'Velrino' Magalhães, tenho {{year}} anos.",
+        "line_2": "Estou no setor de tecnologia desde 2015.",
+        "line_3": "Sou apaixonado pelo universo da tecnologia e seu impacto social desde criança.",
+        "line_4": "Iniciei minha carreira como full-stack, então sempre procurei compreender como o ecossistema (Back, Front e DevOps) funciona para sempre garantir a construção de um produto de qualidade.",
+        "line_5": "Em paralelo com a minha evolução pessoal e profissional, eu participei de diversos eventos e projetos, onde consegui expandir meus conhecimentos por estar cercado de pessoas excepcionais."
+    },
+    "contact": "contato",
+    "go_to": "Abrir link",
+    "experiences": "experiências"
+}

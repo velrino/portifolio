@@ -40,6 +40,9 @@
                                 </span>
                             </div>
                         </div>
+                        <div>
+                            <!-- <ngx-flag-picker [selectedCountryCode]="selectedCountryCode" [countryCodes]="countryCodes" (changedCountryCode)="changeSelectedCountryCode($event)" [showLabels]="true" [showArrow]="true" [customLabels]="customLabels"></ngx-flag-picker> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -93,7 +96,7 @@
         <div class="col-12 text-white text-center h3">
             <i class="fas fa-building fa-2x mb-3"></i>
             <div class="font-weight-bold text-uppercase">
-                experiences
+                {{'experiences' | translate}}
             </div>
         </div>
     </div>
@@ -115,7 +118,7 @@
                         <p class="font-weight-normal">
                             <span> {{ item.period }}</span>
                         </p>
-                        <a [attr.href]="item.url" target="_blank"> Acessar </a>
+                        <a [attr.href]="item.url" target="_blank"> {{'go_to' | translate}} </a>
                     </div>
                 </div>
             </div>
@@ -130,7 +133,7 @@
         <div class="col-12 text-white text-center h3 mb-3">
             <i class="fas fa-envelope-open fa-2x mb-3"></i>
             <div class="font-weight-bold text-uppercase">
-                CONTACT
+                {{'contact' | translate}}
             </div>
         </div>
         <div class="col-12 text-center btn-wrapper">
@@ -178,7 +181,7 @@
         <div class="col-12 text-white text-center h3 mb-3">
             <i class="fas fa-user fa-2x mb-3"></i>
             <div class="font-weight-bold text-uppercase">
-                ABOUT ME
+                {{ 'about' | translate }}
             </div>
         </div>
         <div class="col-12">
@@ -186,21 +189,19 @@
         </div>
         <div class="col-12 col-md-8 text-center btn-wrapper text-white">
             <p>
-                Sou Denis "Velrino" Magalhães, tenho {{ calculateYearOld() }} anos.
+                {{ 'about_me.line_1' | translate :{year: calculateYearOld()} }}
             </p>
             <p>
-                Estou no setor de tecnologia desde 2015.
+                {{ 'about_me.line_2' | translate }}
             </p>
             <p>
-                Sou apaixonado pelo universo da tecnologia e seu impacto social desde criança.
+                {{ 'about_me.line_3' | translate }}
             </p>
             <p>
-                Iniciei minha carreira como full-stack, então sempre procurei compreender como o ecossistema (Back,
-                Front e DevOps) funciona para sempre garantir a construção de um produto de qualidade.
+                {{ 'about_me.line_4' | translate }}
             </p>
             <p>
-                Em paralelo com a minha evolução pessoal e profissional, eu participei de diversos eventos e projetos,
-                onde consegui expandir meus conhecimentos por estar cercado de pessoas excepcionais.
+                {{ 'about_me.line_5' | translate }}
             </p>
         </div>
         <div class="col-12">
@@ -252,15 +253,25 @@
         <a (click)="setStep(StepEnum.experiences)" class="sidenav-menu-item text-uppercase"
             [class.active-route]="actualStep(StepEnum.experiences)">
             <i class="fas fa-building"></i>
-            <span>experiences</span>
+            <span>{{'experiences' | translate}}</span>
         </a>
         <a (click)="setStep(StepEnum.contact)" class="sidenav-menu-item text-uppercase"
             [class.active-route]="actualStep(StepEnum.contact)">
             <i class="fas fa-envelope-open"></i>
-            <span>Contact</span>
+            <span>{{'contact' | translate}}</span>
         </a>
     </div>
-    <div class="custom-divider"></div>
+    <div class="w-75 text-center">
+        <div class="pl-3">
+            <div class="form-group mt-5">
+                <select class="form-control" id="changeSelectedCountryCode" [(ngModel)]="selectedCountryCode"
+                    (change)="changeSelectedCountryCode($event.target.value)">
+                    <option value="us">English</option>
+                    <option value="br">Português</option>
+                </select>
+            </div>
+        </div>
+    </div>
 </div>
 <div [style.visibility]="showSideNav ? 'visible' : 'hidden'" class="new-side-bar-bg" (click)="hideSideNav()">
 </div>
