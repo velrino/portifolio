@@ -25,7 +25,11 @@
                 },
                 {
                     "name": "MongoDB",
-                    "value": 30
+                    "value": 70
+                },
+                {
+                    "name": "Redis",
+                    "value": 50
                 },
                 {
                     "name": "MySQL",
@@ -100,8 +104,20 @@
                     "value": 70
                 },
                 {
-                    "name": "AWS",
-                    "value": 60
+                    "name": "AWS - EC2",
+                    "value": 50
+                },
+                {
+                    "name": "AWS - RDS",
+                    "value": 50
+                },
+                {
+                    "name": "AWS - S3",
+                    "value": 50
+                },
+                {
+                    "name": "Digital Ocean",
+                    "value": 70
                 },
                 {
                     "name": "DDD",
@@ -190,7 +206,28 @@
             ]
         }
     ],
-    "expirence": [{
+    "expirence": [
+        {
+            "title": "Trustly",
+            "job": "FIC Engineer",
+            "height": 50,
+            "period": "(06/2021 - 04/2022)",
+            "bgColor": "#000",
+            "img": "/assets/imgs/companies/trustly.jpg",
+            "url": "https://trustly.net/",
+            "text": "",
+            "list": {
+                "show": false,
+                "title": "example",
+                "skills": []
+            },
+            "link": {
+                "show": false,
+                "label": "06/2019 - ?",
+                "url": "https://www.trustly.net/"
+            }
+        },        
+        {
             "title": "Investelly",
             "job": "Co-Founder",
             "height": 50,
@@ -207,7 +244,7 @@
             "link": {
                 "show": false,
                 "label": "06/2019 - ?",
-                "url": "https://www.itau.com.br/"
+                "url": "https://investelly.com/"
             }
         },
         {
@@ -246,7 +283,7 @@
             },
             "link": {
                 "show": false,
-                "label": "06/2019 - ?",
+                "label": "06/2019 - 11/2020",
                 "url": "https://sthorm.io/"
             }
         },

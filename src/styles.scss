@@ -76,9 +76,13 @@ body {
 
 .bg-velrino {
     height: 100vh;
-    background-image: url('/assets/imgs/1632266803909.webp');
+    background-image: url('/assets/imgs/background-landscape.jpg');
     background-size: cover;
     background-position: center center;
+
+    @media screen and (max-width: 768px) { 
+        background-image: url('/assets/imgs/background-portrait.jpg');
+    }
 }
 
 .text-white {

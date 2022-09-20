@@ -1,37 +1,43 @@
 <!-- HOME -->
-<div *ngIf="actualStep('home')" class="bg-velrino d-flex align-items-center animate__animated animate__slideInLeft">
+<div *ngIf="actualStep(StepEnum.home)"
+    class="bg-velrino d-flex align-items-center animate__animated animate__slideInLeft">
     <span class="mask bg-opacity"></span>
     <div class="container layer-presentation">
         <div class="row justify-content-center">
             <div class="col-12">
-                <div class="d-flex align-items-center align-self-center align-content-center justify-content-center h-100vh">
+                <div
+                    class="d-flex align-items-center align-self-center align-content-center justify-content-center h-100vh">
                     <div class="d-flex flex-column">
-                        <div class="text-white text-4 text-uppercase text-center animate__animated animate__slideInLeft animate__slower">don't work hard,</div>
-                        <div class="text-white text-4 text-uppercase text-center animate__animated animate__slideInRight animate__slower">Work smart!</div>
+                        <div
+                            class="text-white text-4 text-uppercase text-center animate__animated animate__slideInLeft animate__slower">
+                            don't work hard,</div>
+                        <div
+                            class="text-white text-4 text-uppercase text-center animate__animated animate__slideInRight animate__slower">
+                            Work smart!</div>
                         <div class="row justify-content-center mt-3">
-                            <div class="col-3 clickable" (click)="setStep('skills')">
+                            <div class="col-3 clickable" (click)="setStep(StepEnum.about)">
                                 <span class="fa-stack fa-1x scale-1-5">
-                            <i class="far fa-circle fa-stack-2x icon-background"></i>
-                            <i class="fas fa-jedi fa-stack-1x"></i>
-                          </span>
+                                    <i class="far fa-circle fa-stack-2x icon-background"></i>
+                                    <i class="fas fa-user fa-stack-1x"></i>
+                                </span>
                             </div>
-                            <div class="col-3 clickable" (click)="setStep('portfolio')">
-                                <span class="fa-stack fa-1x scale-1-5" style="vertical-align: top;">
-                            <i class="far fa-circle fa-stack-2x icon-background"></i>
-                            <i class="fas fa-briefcase fa-stack-1x"></i>
-                          </span>
+                            <div class="col-3 clickable" (click)="setStep(StepEnum.skills)">
+                                <span class="fa-stack fa-1x scale-1-5">
+                                    <i class="far fa-circle fa-stack-2x icon-background"></i>
+                                    <i class="fas fa-jedi fa-stack-1x"></i>
+                                </span>
                             </div>
-                            <div class="col-3 clickable" (click)="setStep('experiences')">
+                            <div class="col-3 clickable" (click)="setStep(StepEnum.portfolio)">
                                 <span class="fa-stack fa-1x scale-1-5" style="vertical-align: top;">
-                          <i class="far fa-circle fa-stack-2x icon-background"></i>
-                          <i class="fas fa-building fa-stack-1x"></i>
-                        </span>
+                                    <i class="far fa-circle fa-stack-2x icon-background"></i>
+                                    <i class="fas fa-briefcase fa-stack-1x"></i>
+                                </span>
                             </div>
-                            <div class="col-3 clickable" (click)="setStep('contact')">
+                            <div class="col-3 clickable" (click)="setStep(StepEnum.experiences)">
                                 <span class="fa-stack fa-1x scale-1-5" style="vertical-align: top;">
-                            <i class="far fa-circle fa-stack-2x icon-background"></i>
-                            <i class="fas fa-envelope-open fa-stack-1x"></i>
-                          </span>
+                                    <i class="far fa-circle fa-stack-2x icon-background"></i>
+                                    <i class="fas fa-building fa-stack-1x"></i>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -41,13 +47,13 @@
     </div>
 </div>
 <!-- NAVBAR -->
-<nav *ngIf="!actualStep('home')" class="navbar fixed-top navbar-light bg-light">
+<nav *ngIf="!actualStep(StepEnum.home)" class="navbar fixed-top navbar-light bg-light">
     <div class="ml-auto clickable pt-3" (click)="sideNavShow()">
         <i class="fas fa-bars fa-2x"></i>
     </div>
 </nav>
 <!-- SKILLS -->
-<div *ngIf="actualStep('skills') && data" class="container my-5 animate__animated animate__slideInLeft">
+<div *ngIf="actualStep(StepEnum.skills) && data" class="container my-5 animate__animated animate__slideInLeft">
     <div class="row justify-content-center">
         <div class="col-12 text-white text-center h3">
             <i class="fas fa-jedi fa-2x mb-3"></i>
@@ -70,7 +76,7 @@
     </div>
 </div>
 <!-- PORTFOLIO -->
-<div *ngIf="actualStep('portfolio') && data" class="container my-5 animate__animated animate__slideInLeft">
+<div *ngIf="actualStep(StepEnum.portfolio) && data" class="container my-5 animate__animated animate__slideInLeft">
     <div class="row justify-content-center">
         <div class="col-12 text-white text-center h3">
             <i class="fas fa-briefcase fa-2x mb-3"></i>
@@ -82,7 +88,7 @@
     <gallery [data]="data.projects"></gallery>
 </div>
 <!-- EXPERIENCES -->
-<div *ngIf="actualStep('experiences') && data" class="container my-5 animate__animated animate__slideInLeft">
+<div *ngIf="actualStep(StepEnum.experiences) && data" class="container my-5 animate__animated animate__slideInLeft">
     <div class="row justify-content-center">
         <div class="col-12 text-white text-center h3">
             <i class="fas fa-building fa-2x mb-3"></i>
@@ -100,7 +106,7 @@
                         <img [src]="item.img" [height]="item.height ? item.height : 30">
                     </div>
                     <div class="timeline-content text-left" [class.right]="i % 2 !== 0">
-                        <p class="font-weight-normal">
+                        <p class="font-weight-bold">
                             <span> {{ item.title }}</span>
                         </p>
                         <p class="font-weight-normal">
@@ -118,8 +124,9 @@
     </div>
 </div>
 <!-- CONTACT -->
-<div *ngIf="actualStep('contact') && data" class="container animate__animated animate__slideInLeft">
-    <div class="row justify-content-center d-flex align-items-center align-self-center align-content-center justify-content-center h-100vh">
+<div *ngIf="actualStep(StepEnum.contact) && data" class="container animate__animated animate__slideInLeft">
+    <div
+        class="row justify-content-center d-flex align-items-center align-self-center align-content-center justify-content-center h-100vh">
         <div class="col-12 text-white text-center h3 mb-3">
             <i class="fas fa-envelope-open fa-2x mb-3"></i>
             <div class="font-weight-bold text-uppercase">
@@ -127,51 +134,128 @@
             </div>
         </div>
         <div class="col-12 text-center btn-wrapper">
-            <a target="_blank" href="https://twitter.com/velrino" rel="nofollow" class="btn btn-icon-only btn-twitter rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
+            <a target="_blank" href="https://twitter.com/velrino" rel="nofollow"
+                class="btn btn-icon-only btn-twitter rounded-circle" data-toggle="tooltip"
+                data-original-title="Follow us">
                 <span class="btn-inner--icon"><i class="fab fa-twitter"></i></span>
             </a>
-            <a target="_blank" href="https://www.facebook.com/velrino.magalhaes/" rel="nofollow" class="btn-icon-only rounded-circle btn btn-facebook" data-toggle="tooltip" data-original-title="Like us">
+            <a target="_blank" href="https://www.facebook.com/velrino.magalhaes/" rel="nofollow"
+                class="btn-icon-only rounded-circle btn btn-facebook" data-toggle="tooltip"
+                data-original-title="Like us">
                 <span class="btn-inner--icon"><i class="fab fa-facebook-f"></i></span>
             </a>
-            <a target="_blank" href="https://instagram.com/velrino" rel="nofollow" class="btn btn-icon-only btn-instagram rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
+            <a target="_blank" href="https://instagram.com/velrino" rel="nofollow"
+                class="btn btn-icon-only btn-instagram rounded-circle" data-toggle="tooltip"
+                data-original-title="Follow us">
                 <span class="btn-inner--icon"><i class="fab fa-instagram"></i></span>
             </a>
-            <a target="_blank" href="https://play.google.com/store/apps/developer?id=Velrino" rel="nofollow" class="btn btn-icon-only btn-youtube rounded-circle" data-toggle="tooltip" data-original-title="Star on Github">
+            <a target="_blank" href="https://play.google.com/store/apps/developer?id=Velrino" rel="nofollow"
+                class="btn btn-icon-only btn-youtube rounded-circle" data-toggle="tooltip"
+                data-original-title="Star on Github">
                 <span class="btn-inner--icon"><i class="fab fa-google-play"></i></span>
             </a>
-            <a target="_blank" href="https://www.linkedin.com/in/velrino/" rel="nofollow" class="btn btn-icon-only btn-facebook rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
+            <a target="_blank" href="https://www.linkedin.com/in/velrino/" rel="nofollow"
+                class="btn btn-icon-only btn-facebook rounded-circle" data-toggle="tooltip"
+                data-original-title="Follow us">
                 <span class="btn-inner--icon"><i class="fab fa-linkedin-in"></i></span>
             </a>
-            <a target="_blank" href="https://youtube.com/velrino" rel="nofollow" class="btn btn-icon-only btn-youtube rounded-circle" data-toggle="tooltip" data-original-title="Follow us">
+            <a target="_blank" href="https://youtube.com/velrino" rel="nofollow"
+                class="btn btn-icon-only btn-youtube rounded-circle" data-toggle="tooltip"
+                data-original-title="Follow us">
                 <span class="btn-inner--icon"><i class="fab fa-youtube"></i></span>
             </a>
-            <a target="_blank" href="https://github.com/velrino" rel="nofollow" class="btn btn-icon-only bg-white rounded-circle" data-toggle="tooltip" data-original-title="Star on Github">
+            <a target="_blank" href="https://github.com/velrino" rel="nofollow"
+                class="btn btn-icon-only bg-white rounded-circle" data-toggle="tooltip"
+                data-original-title="Star on Github">
                 <span class="btn-inner--icon"><i class="fab fa-github"></i></span>
             </a>
         </div>
     </div>
 </div>
+<!-- ABOUT -->
+<div *ngIf="actualStep(StepEnum.about) && data" class="container animate__animated animate__slideInLeft">
+    <div class="row justify-content-center h-100vh mt-5 pb-5">
+        <div class="col-12 text-white text-center h3 mb-3">
+            <i class="fas fa-user fa-2x mb-3"></i>
+            <div class="font-weight-bold text-uppercase">
+                ABOUT ME
+            </div>
+        </div>
+        <div class="col-12">
+            <hr class="rounded w-50">
+        </div>
+        <div class="col-12 col-md-8 text-center btn-wrapper text-white">
+            <p>
+                Sou Denis "Velrino" Magalhães, tenho {{ calculateYearOld() }} anos.
+            </p>
+            <p>
+                Estou no setor de tecnologia desde 2015.
+            </p>
+            <p>
+                Sou apaixonado pelo universo da tecnologia e seu impacto social desde criança.
+            </p>
+            <p>
+                Iniciei minha carreira como full-stack, então sempre procurei compreender como o ecossistema (Back,
+                Front e DevOps) funciona para sempre garantir a construção de um produto de qualidade.
+            </p>
+            <p>
+                Em paralelo com a minha evolução pessoal e profissional, eu participei de diversos eventos e projetos,
+                onde consegui expandir meus conhecimentos por estar cercado de pessoas excepcionais.
+            </p>
+        </div>
+        <div class="col-12">
+            <hr class="rounded w-50">
+        </div>
+        <div class="col-12 pb-5">
+            <div class="row">
+                <div class="col-12 col-md-6 mt-3">
+                    <img src="/assets/imgs/events/bee-tech.jpg" class="img-fluid">
+                </div>
+                <div class="col-12 col-md-6 mt-3">
+                    <img src="/assets/imgs/events/fatec.jpg" class="img-fluid">
+                </div>
+                <div class="col-12 col-md-6 mt-3">
+                    <img src="/assets/imgs/events/itau.jpg" class="img-fluid">
+                </div>
+                <div class="col-12 col-md-6 mt-3">
+                    <img src="/assets/imgs/events/senai.jpg" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- SIDENAV -->
-<div [style.visibility]="showSideNav ? 'visible' : 'hidden'" id="side-nav-menu" class="new-side-bar animate__animated bg-dark">
+<div [style.visibility]="showSideNav ? 'visible' : 'hidden'" id="side-nav-menu"
+    class="new-side-bar animate__animated bg-dark">
     <div class="custom-divider"></div>
     <div class="mt-3">
-        <a (click)="setStep('home')" class="sidenav-menu-item text-uppercase" [class.active-route]="actualStep('home')">
+        <a (click)="setStep(StepEnum.home)" class="sidenav-menu-item text-uppercase"
+            [class.active-route]="actualStep(StepEnum.home)">
             <i class="fas fa-home"></i>
             <span>home</span>
         </a>
-        <a (click)="setStep('skills')" class="sidenav-menu-item text-uppercase" [class.active-route]="actualStep('skills')">
+        <a (click)="setStep(StepEnum.about)" class="sidenav-menu-item text-uppercase"
+            [class.active-route]="actualStep(StepEnum.about)">
+            <i class="fas fa-home"></i>
+            <span>about</span>
+        </a>
+        <a (click)="setStep(StepEnum.skills)" class="sidenav-menu-item text-uppercase"
+            [class.active-route]="actualStep(StepEnum.skills)">
             <i class="fas fa-jedi"></i>
             <span>Skills</span>
         </a>
-        <a (click)="setStep('portfolio')" class="sidenav-menu-item text-uppercase" [class.active-route]="actualStep('portfolio')">
+        <a (click)="setStep(StepEnum.portfolio)" class="sidenav-menu-item text-uppercase"
+            [class.active-route]="actualStep(StepEnum.portfolio)">
             <i class="fas fa-briefcase"></i>
             <span>Portfolio</span>
         </a>
-        <a (click)="setStep('experiences')" class="sidenav-menu-item text-uppercase" [class.active-route]="actualStep('experiences')">
+        <a (click)="setStep(StepEnum.experiences)" class="sidenav-menu-item text-uppercase"
+            [class.active-route]="actualStep(StepEnum.experiences)">
             <i class="fas fa-building"></i>
             <span>experiences</span>
         </a>
-        <a (click)="setStep('contact')" class="sidenav-menu-item text-uppercase" [class.active-route]="actualStep('contact')">
+        <a (click)="setStep(StepEnum.contact)" class="sidenav-menu-item text-uppercase"
+            [class.active-route]="actualStep(StepEnum.contact)">
             <i class="fas fa-envelope-open"></i>
             <span>Contact</span>
         </a>

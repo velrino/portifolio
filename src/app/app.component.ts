@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RequestService } from 'src/app/shared/services/request.service';
+import { StepEnum } from './shared/interfaces/step.dto';
 
 @Component({
   selector: 'app-root',
@@ -11,24 +13,44 @@ export class AppComponent implements OnInit {
     url: '/assets/data/data.json'
   };
   data: any;
-  step: 'home' | 'skills' | 'contact' | 'portfolio' | 'experiences' = 'home';
+  StepEnum = StepEnum;
+  step: StepEnum = StepEnum.home;
   skillsList = [{}, {}]
-  constructor(private requestService: RequestService) { }
+  constructor(
+    private requestService: RequestService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.handleQueryUrl()
     this.getData();
     this.calculateYearOld();
   }
 
-  setStep(step: 'home' | 'skills' | 'contact' | 'portfolio' | 'experiences') {
+  handleQueryUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const stepInformed = urlParams.get('step');
+
+    if (!Object.values(StepEnum).includes(stepInformed as any)) return this.setStep(StepEnum.home);
+
+    return this.setStep(stepInformed as StepEnum);
+  }
+
+  setStep(step: StepEnum) {
     this.step = step;
+
+    this.router.navigate(
+      [],
+      { queryParams: { step } }
+    );
+
     window.scrollTo(0, 0);
+
     this.hideSideNav()
   }
 
-  actualStep(step: 'home' | 'skills' | 'contact' | 'portfolio' | 'experiences') {
-    return this.step === step;
-  }
+  actualStep = ((step: StepEnum) => this.step === step)
+  
 
   async getData() {
     await this.requestService.request(this.component.url).then((response) => this.handleResponse(response));
@@ -42,9 +64,7 @@ export class AppComponent implements OnInit {
     this.data = response.result;
   }
 
-  getYear() {
-    return new Date().getFullYear();
-  }
+  getYear = (() => new Date().getFullYear())
 
   calculateYearOld() {
     const dates: any = {
